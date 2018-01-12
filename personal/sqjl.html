@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>授权记录</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/buttons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .bg {
+            width: 425px;
+            height: 687px;
+            background-color: rgb(243, 242, 247);
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-51.6%, -30.4%);
+            color: #dcdcdc;
+        }
+
+        .css-live-wrap-tbfw {
+            position: absolute;
+            top: 50%;
+            left: 37%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-arrow {
+            position: absolute;
+            top: 3%;
+            left: 5%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-ztl {
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-tbf {
+            position: absolute;
+            top: 22%;
+            left: 17%;
+            transform: translate(-30%, -50%);
+        }
+
+        .sjk123 {
+            width: 700px;
+            height: 1200px;
+            background-image: url("../images/手机壳1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+                     
+         ul {   
+           list-style-type: none;   
+           margin: 0;   
+           padding: 0;   
+         }   
+                     
+         li {
+           margin: 0px 0px 0px 0px;
+           padding: 0px 0px 0px 0px;
+           border-bottom: 1px solid #ccc;  
+         }  
+
+        li span {
+            margin: 20px 10px 20px 10px;
+            color: gray;
+        } 
+
+    </style>
+</head>
+
+<body style="background:none">
+<div class="sjk123" id="asdf">
+<div class="bg" >
+   <img src="../images/资源 79.png" class="css-live-wrap-ztl" style="height: 50px; width: 424px; top: 4%; transform: translate(-29.7%, -54%);">
+   <a href="tbxy.html"><img src="../images/资源 80.png" class="css-live-wrap-ztl" style="height: 20px; width: 20px; left: 5%; top: 4%; "></a>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 11%; top: 4%; transform: translate(-30%, -60%);">|</text>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 20%; top: 4%; transform: translate(-30%, -50%); color: rgb(1, 128, 256)">授权记录</text>
+   <div class="css-live-wrap-ztl" style="top: 53.4%; height: 633px; width: 426px; overflow-y:auto;">    
+      <ul id="areaList" style="font-size: 18px">
+      </ul>      
+    </div>    
+   
+   <text id="txt" class="css-live-wrap-tbf" style="top: 15%; left:60%; width: 75%; transform: translate(-30%, -40%); font-size: 20px; visibility: hidden; color: gray;">无授权记录！</text>
+</div>
+</div>
+<a onclick="window.location.reload()" class="button button-pill button-tiny css-live-wrap-ztl" style="top: 5%; left: 20%; visibility: hidden" id="btn"><b>返回</b></a>
+<div class="panel-body"></div> 
+
+</body>
+</html>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/js.cookie.js"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../project_js/general.js"></script>
+<script type="text/javascript">
+    console.log(Cookies.get("mobile"),Cookies.get("token"))
+    var areaCont = "";
+    var res = "";
+    $.post("http://202.120.32.247:54324/api/v1.0/personal/self/history/credit", {
+        "mobile": Cookies.get("mobile"),
+        "token": Cookies.get("token"),
+        "srctype": "FUND"
+    })
+    .done(function (result) {
+        res = result.data;
+        var length = res.length;
+        if (length != 0) {
+            for (var i = 0; i < length; i++) {
+                year = res[i].time.substr(0, 4);
+                month = res[i].time.substr(5, 2);
+                day = res[i].time.substr(8, 2);
+                score = res[i].total;
+                organization = res[i].organization_type;
+                task_id = res[i].task_id;
+                var org = "";
+                if (organization == "BANK") {
+                    org = "银行";
+                }
+                if (organization == "FUND") {
+                    org = "公积金";
+                }
+                if (organization == "SOCIALSECURITY") {
+                    org = "社保";
+                }
+
+                // areaCont += "<li onclick='showReport(\"" + organization + "\", \"" + task_id + "\")'><span>" + year + "年" + month + "月" + day + "日" + '<br /><br />' + "&nbsp;&nbsp;补全" + org  + "报告" + '</span></li>';
+
+                areaCont += "<li onclick='showReport(\"" + organization + "\", \"" + task_id + "\")'><span><div>&nbsp;&nbsp;" + year + "年" + month + "月" + day + "日</div>"  + "<div style='margin-top:12px;'>&nbsp;&nbsp;&nbsp;&nbsp;补全" + org  + "报告</div>" + '</span></li>';
+            }
+            $("#areaList").html(areaCont);
+        }
+        else {
+            document.getElementById("txt").style.visibility = "visible";
+        }
+    });
+    function showReport(orgnization, task_id) {
+        $.post("http://202.120.32.247:54324/api/v1.0/personal/self/report/credit", {
+            "mobile": Cookies.get("mobile"),
+            "token": Cookies.get("token"),
+            "srctype": organization,
+            "task_id": task_id
+        })
+            .done(function (result) {
+                console.log(task_id);
+                if (result.report != null) {
+                    if (orgnization == "BANK") {
+                        alert('无银行报告！');
+                    }
+                    if (orgnization == "FUND") {
+                        window.location.href='gjjjbxx.html?task_id='+task_id;
+                    }
+                    if (orgnization == "SOCIALSECURITY") {
+                        window.location.href='sbjbxx.html?task_id='+task_id;
+                    }
+                }
+                else{
+                    alert('未找到报告！');
+                }
+            });
+    }
+</script>
+</body>
+

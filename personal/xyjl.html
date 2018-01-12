@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>信用记录</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/buttons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .bg {
+            width: 425px;
+            height: 687px;
+            background-color: rgb(243, 242, 247);
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-51.6%, -30.4%);
+            color: #dcdcdc;
+        }
+
+        .css-live-wrap-tbfw {
+            position: absolute;
+            top: 50%;
+            left: 37%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-arrow {
+            position: absolute;
+            top: 3%;
+            left: 5%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-ztl {
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-tbf {
+            position: absolute;
+            top: 22%;
+            left: 17%;
+            transform: translate(-30%, -50%);
+        }
+
+        .sjk123 {
+            width: 700px;
+            height: 1200px;
+            background-image: url("../images/手机壳1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+                     
+         ul {   
+           list-style-type: none;   
+           margin: 0;   
+           padding: 0;   
+         }   
+                     
+         li {
+           margin: 20px 0px 0px 0px;
+           padding: 0px 0px 20px 0px;
+           border-bottom: 1px solid #ccc;  
+         }  
+
+        li span {
+            margin: 20px 10px 20px 10px;
+            color: gray;
+        } 
+
+    </style>
+</head>
+
+<body style="background:none">
+<div class="sjk123">
+<div class="bg">
+   <img src="../images/资源 79.png" class="css-live-wrap-ztl" style="height: 50px; width: 424px; top: 4%; transform: translate(-29.7%, -54%);">
+   <a href="tbxy.html"><img src="../images/资源 80.png" class="css-live-wrap-ztl" style="height: 20px; width: 20px; left: 5%; top: 4%;  "></a>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 11%; top: 4%; transform: translate(-30%, -60%);">|</text>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 20%; top: 4%; transform: translate(-30%, -50%); color: rgb(1, 128, 256)">信用历史</text>
+<div class="css-live-wrap-ztl" style="top: 53.4%; height: 633px; width: 426px; overflow-y:auto;">    
+   <ul id="areaList" style="font-size: 18px">   
+   </ul>   
+ </div>  
+
+<text id="txt" class="css-live-wrap-tbf" style="top: 15%; left: 60%; width: 75%; transform: translate(-30%, -40%); font-size: 20px; visibility: hidden; color: gray;">无信用记录！</text>
+</div>
+</div>
+
+
+
+</body>
+</html>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/js.cookie.js"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    console.log(Cookies.get("mobile"),Cookies.get("token"))
+    $.post("http://202.120.32.247:54324/api/v1.0/personal/self/history/scores", {
+        "mobile": Cookies.get("mobile"),
+        "token": Cookies.get("token")
+    })
+    .done(function (result) {
+        var res = result.data;
+        console.log(res);
+        var length = res.length;
+        if (length == 0) {
+            document.getElementById("txt").style.visibility = "visible";
+        }
+        areaCont = "";
+        for (var i = 0; i < length; i++) {
+            year = res[length - i - 1].time.substr(0, 4);
+            month = res[length - i - 1].time.substr(5, 2);
+            day = res[length - i - 1].time.substr(8, 2);
+            score = res[length - i - 1].total;
+            areaCont += '<li><span>' + year + "年" + month + "月" + day + "日, 您的通宝分是" + score + "分！"  + '</span></li>';
+        }
+        $("#areaList").html(areaCont);
+    });
+</script>
+

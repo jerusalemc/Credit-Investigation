@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>通宝分主页</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side show-nav hide">
+
+
+        <div class="logo">
+            <img src="images/nav-title.png" alt="">
+        </div>
+        <!--logo and iconic logo start
+                <div class="logo-icon text-center">
+                    <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
+                </div>
+                logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="index.html"><span>主页</span></a></li>
+                <li><a href="personal/login.html"><span>登录/注册</span></a></li>
+                <li><a href="datasourseShow.html"><span>数据源展示</span></a></li>
+                <li><a href="definition.html"><span>关于通宝分</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <div class="left-side sticky-left-side hide-nav">
+
+
+        <div class="logo">
+            <img src="images/nav-title2.png" alt="">
+        </div>
+        <!--logo and iconic logo start
+                <div class="logo-icon text-center">
+                    <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
+                </div>
+                logo and iconic logo end-->
+    </div>
+    <!-- left side end-->
+    <div class="title-logo">
+        <img src="images/title.png">
+    </div>
+
+    <!-- main content start-->
+    <div class="maincontent" >
+
+        <!--body wrapper start-->
+        <div style="margin-top: 15px;">
+            <div class="row">
+                <section>
+                    <div class="panel-body">
+                        <div class="col-sm-7">
+                            <div id="map-chart"style="show:hidden"></div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="col-sm-12">
+                                <div id="bar-chart" class="full-width half-height"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="bar1-chart" class="full-width half-height"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+<script src="project_js/echarts.min.js"></script>
+<script src="project_js/china.js"></script>
+<script src="project_js/city.js"></script>
+<script src="project_js/index.js"></script>
+<script src="project_js/general.js"></script>
+<script>
+    $(function () {
+        $('.show-nav .logo').click(function () {
+            $('.show-nav').hide();
+            $('.hide-nav').show();
+        });
+        $('.hide-nav .logo').click(function () {
+            $('.hide-nav').hide();
+            $('.show-nav').removeClass('hide').show();
+        });
+    })
+</script>
+</body>
+</html>

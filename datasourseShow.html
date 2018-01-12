@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>数据源展示</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body class="sticky-header" style="overflow: hidden">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side show-nav hide">
+
+
+        <div class="logo">
+            <img src="images/nav-title.png" alt="">
+        </div>
+        <!--logo and iconic logo start
+                <div class="logo-icon text-center">
+                    <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
+                </div>
+                logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="index.html"><span>主页</span></a></li>
+                <li><a href="personal/login.html"><span>登录/注册</span></a></li>
+                <li class="active"><a href="datasourseShow.html"><span>数据源展示</span></a></li>
+                <!-- <li><a href="report.html"><span>征信报告</span></a></li> -->
+
+                <li><a href="definition.html"><span>关于通宝分</span></a></li>
+            </ul>
+
+
+        </div>
+    </div>
+    <div class="left-side sticky-left-side hide-nav">
+
+
+        <div class="logo">
+            <img src="images/nav-title2.png" alt="">
+        </div>
+        <!--logo and iconic logo start
+                <div class="logo-icon text-center">
+                    <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
+                </div>
+                logo and iconic logo end-->
+    </div>
+    <div class="title-logo">
+        <img src="images/title.png">
+    </div>
+    <!-- main content start-->
+
+
+    <div id='map' class="row">
+        <div class="col-sm-12" id="showMap">
+            <div class="col-md-1" style="text-align:center;">
+                <br><br>
+                <button id="n1" class="btn btn-primary" style="color:dodgerblue;height:40px;width:80px;background-color: #ffffff;"><div style="text-align:center;">公积金</div></button>
+                <br><br>
+                <button id="n2" class="btn btn-primary" style="color:dodgerblue;height:35px;width:70px;background-color: #c5e3ff;"><div style="text-align:center;">社保</div></button>
+            </div>
+            <div class="col-sm-8">
+                <div id="map-chart" class="full-width"></div>
+            </div>
+            <div class="col-sm-2">
+                <div style="margin-top:40%;">
+                    <h3 class="text-center table-title" style="color: white"></h3>
+                </div>
+                <div id="scroll" style="width:100%;height: 400px;border-radius: 20px;overflow-y:scroll;">
+                    <div style="border-radius:20px;background-color:#F5F5F5;">
+                        <table id="partTable" class="table table-striped" style="border-radius:20px;">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  class="col-sm-12" style="height:30px;text-align: center;position:fixed; bottom:15px;">
+            <img id='img1' src="images/www.png" style="width:4%;height: 80%">
+        </div>
+    </div>
+
+
+
+    <div id='show' class="row" style="display: none;">
+        <div class="col-sm-12">
+            <div class="col-md-1" style="text-align: center">
+                <br><br>
+                <button id="n3" class="btn btn-primary" style="color:dodgerblue;height:40px;width:80px;background-color: #ffffff;"><div style="text-align:center;">公积金</div></button>
+                <br><br>
+                <button id="n4" class="btn btn-primary" style="color:dodgerblue;height:35px;width:70px;background-color: #c5e3ff;"><div style="text-align:center;">社保</div></button>
+            </div>
+            <div class="col-sm-10 mypanel" style="margin-top: 50px;">
+                <div style="margin-left: 10px">
+                    <h3 id='title' style="color: #1e90ff">公积金报告</h3>
+                    <h5 style="color: #737373">报告时间 : 2017-12-25 16:25:50</h5>
+                </div>
+
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div id='show1'  style="overflow-y:scroll;border-radius:10px;">
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 30px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingOne1"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>
+                                        基本信息
+                                    </a>
+                                    <img src="images/upArrow.png" class="arrow" >
+                                </h4>
+                            </div>
+                            <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne1">
+                                <div class="panel-body" style="border: 0px">
+                                    <div class="row" style="color:#1E90FF">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                姓名 : 闫xx<br><br>
+                                                性别 : - <br><br>
+                                                身份证号 : <font style="color: #737373">342XXXXXXXXXX2015</font><br><br>
+                                                当前缴存比例 : <font style="color: #737373">0</font><br><br>
+                                                最近一次缴存时间 : <font style="color: #737373"> 2017.12.14</font><br><br>
+                                                公积金贷款笔数 : 0<br><br>
+                                                公积金贷款月还款金额(元) : <font style="color: #737373">0.00</font>
+                                            </div>
+                                            <div class="col-md-4">
+                                                机构类型 : <br><br>
+                                                账号状态 : <font style="color: #737373">正常</font><br><br>
+                                                当前月缴存金额(元) : <font style="color: #737373">546.00</font><br><br>
+                                                最长连续缴存月份 : <fonft style="color: #737373">35</fonft><br><br>
+                                                缴存单位规模 : <br><br>
+                                                当然公司连续缴存月份(预估) : <font style="color: #737373">4</font><br><br>
+                                                开始缴存日期 : <font style="color: #737373">2005.11.15</font>
+                                            </div>
+                                            <div class="col-md-4">
+                                                公积金账号 : <font style="color: #737373">083XXXXX7205</font><br><br>
+                                                当前缴存单位 : <font style="color: #737373">上海XXXXXXXX有限公司</font><br><br>
+                                                当前账号余额(元) : <font style="color: #737373">45,166.92</font><br><br>
+                                                最近连续缴存月份 : <font style="color: #737373">35</font><br><br>
+                                                缴存单位性质 : <font style="color: #737373">XX服务业</font><br><br>
+                                                预估月收入(元) : <font style="color: #737373">2,730,00</font><br><br>
+                                                累计流水条数 : <font style="color: #737373">141</font><br><br>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingTwo1"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a >
+                                        工作信息
+                                    </a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseTwo1" class="myscroll panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo1">
+                                <div class="panel-body" style="border: 0px">
+                                    <div class="bs-example" data-example-id="simple-table">
+                                        <div style="height: 150px;">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>单位名称</th>
+                                                    <th>单位性质</th>
+                                                    <th>单位规模</th>
+                                                    <th>状态</th>
+                                                    <th>开始时间</th>
+                                                    <th>结束时间</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>XX力资源有限公司</td>
+                                                    <td>商务服务业</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2017.9</td>
+                                                    <td>2017.9</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>XXXXXXX派遣有限公司</td>
+                                                    <td>XXXX业</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2017.9</td>
+                                                    <td>2017.9</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>XXXXXX分公司</td>
+                                                    <td>XX服务业</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2017.9</td>
+                                                    <td>2017.9</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>XXXXX有限公司</td>
+                                                    <td>XXXX业</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2017.9</td>
+                                                    <td>2017.9</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>XXXXX有限公司</td>
+                                                    <td>XXXX业</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2017.9</td>
+                                                    <td>2017.9</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>XXXXX有限公司</td>
+                                                    <td>XXXX业</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2017.9</td>
+                                                    <td>2017.9</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingThree1"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>
+                                        账户流水
+                                    </a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseThree1" class="myscroll panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree1">
+                                <div class="panel-body" style="border: 0px">
+                                    <div style="height: 150px;">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>单位名称</th>
+                                                <th>操作日期</th>
+                                                <th>操作类型</th>
+                                                <th>缴纳月份</th>
+                                                <th>金额(元)</th>
+                                                <th>余额(元)</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>2017.12.14</td>
+                                                <td>汇缴2017年11月公积金</td>
+                                                <td>2017.11</td>
+                                                <td>546.00</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>2017.12.14</td>
+                                                <td>汇缴2017年11月公积金</td>
+                                                <td>2017.11</td>
+                                                <td>546.00</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>2017.12.14</td>
+                                                <td>汇缴2017年11月公积金</td>
+                                                <td>2017.11</td>
+                                                <td>546.00</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>2017.12.14</td>
+                                                <td>汇缴2017年11月公积金</td>
+                                                <td>2017.11</td>
+                                                <td>546.00</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>2017.12.14</td>
+                                                <td>汇缴2017年11月公积金</td>
+                                                <td>2017.11</td>
+                                                <td>546.00</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>2017.12.14</td>
+                                                <td>汇缴2017年11月公积金</td>
+                                                <td>2017.11</td>
+                                                <td>546.00</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingFour1"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" class=" collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>
+                                        贷款
+                                    </a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseFour1" class="myscroll panel-collapse  collapse" role="tabpanel"
+                                 aria-labelledby="headingFour1">
+                                <div class="panel-body" style="border: 0px">
+                                    <div  style="height: 150px;">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>合同号</th>
+                                                <th>贷款银行</th>
+                                                <th>贷款状态</th>
+                                                <th>贷款额度(元)</th>
+                                                <th>贷款余额(元)</th>
+                                                <th>贷款期限</th>
+                                                <th>贷款开始时间</th>
+                                                <th>贷款结束时间</th>
+                                                <th>贷款利率</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXX有限公司</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id='show2' class="myscroll"
+                         style="overflow-y:scroll;border-radius:10px;display: none">
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 30px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingFive"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>
+                                        基本信息
+                                    </a>
+                                    <img src="images/upArrow.png" class="arrow">
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingFive">
+                                <div class="panel-body" style="border: 0px">
+                                    <div class="row" style="color:#1E90FF">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                姓名 : 闫xx<br><br>
+                                                性别 : - <br><br>
+                                                参保状态 : -</font><br><br>
+                                                最近缴纳基数 : <font style="color: #737373">3,902.00</font><br><br>
+                                                终止参保时间 : -<br><br>
+                                                医疗账户余额 : 0<br><br>
+                                                最近参保单位 : <font style="color: #737373">XXXXXX有限公司</font><br><br>
+                                                通讯地址 : <font style="color: #737373">XXXXXXXX202室</font>
+                                            </div>
+                                            <div class="col-md-4">
+                                                生日 : -<br><br>
+                                                最近缴纳时间 : <font style="color: #737373">2017.11</font><br><br>
+                                                养老账户余额 : <font style="color: #737373">58,605.90</font><br><br>
+                                                历史连续缴纳最大月数 : <font style="color: #737373">12个月</font><br><br>
+                                                预计月收入 : <font style="color: #737373">3,902.00</font><br><br>
+                                                最近参保单位 : <font style="color: #737373">上海XXXXXXX有限公司</font><br><br>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                证件类型 : <font style="color: #737373">身份证</font><br><br>
+                                                最近单位缴纳月数 : -<br><br>
+                                                累计缴纳月数 : <font style="color: #737373">134个月</font><br><br>
+                                                历史最大缴纳基数 : <font style="color: #737373">4,500.00</font><br><br>
+                                                最近社保机构名称 :-<br><br>
+                                                学历 : -<br><br>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingSix"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>基本医疗保险</a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="myscroll panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body" style="border: 0px">
+                                    <div  style="height: 150px;">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>缴纳时间</th>
+                                                <th>缴纳基数</th>
+                                                <th>缴纳单位</th>
+                                                <th>个人缴纳</th>
+                                                <th>公司名称</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingSeven"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a >基本养老保险</a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseSeven" class="myscroll panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingSeven">
+                                <div class="panel-body" style="border: 0px">
+                                    <div style="height: 150px;">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>缴纳时间</th>
+                                                <th>缴纳基数</th>
+                                                <th>缴纳单位</th>
+                                                <th>个人缴纳</th>
+                                                <th>公司名称</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingEight"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff"  class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>失业保险</a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseEight" class=" myscroll panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingEight">
+                                <div class="panel-body" style="border: 0px">
+                                    <div  style="height: 150px;">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>缴纳时间</th>
+                                                <th>缴纳基数</th>
+                                                <th>缴纳单位</th>
+                                                <th>个人缴纳</th>
+                                                <th>公司名称</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="margin-left: 40px;margin-top: 20px;margin-right:40px;">
+                            <div class="panel-heading" role="tab" id="headingNine"
+                                 style="background-color:white;background-image: url('images/backimg.png');background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+                                <h4 class="panel-title" style="color: #1e90ff" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a>失业保险</a>
+                                    <img src="images/downArrow.png" class="arrow down">
+                                </h4>
+                            </div>
+                            <div id="collapseNine" class="myscroll panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingNine">
+                                <div class="panel-body" style="border: 0px">
+                                    <div style="height: 150px;">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>缴纳时间</th>
+                                                <th>缴纳基数</th>
+                                                <th>缴纳单位</th>
+                                                <th>个人缴纳</th>
+                                                <th>公司名称</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017.05</td>
+                                                <td>4,500.00</td>
+                                                <td>-</td>
+                                                <td>90.00</td>
+                                                <td>-</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div  id = 'uparrow' class="col-sm-12" style="height:30px;text-align: center;position:fixed; bottom:15px;display: none;">
+            <img id='img2' src="images/www.png" style="width:4%;height: 80%;transform: rotate(180deg)">
+        </div>
+    </div>
+
+
+
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<!--<script src="js/jquery.nicescroll.js"></script>-->
+
+<!--common scripts for all pages-->
+<script src="project_js/echarts.min.js"></script>
+<script src="project_js/china.js"></script>
+<script src="project_js/DatasourseShow.js"></script>
+<script src="project_js/general.js"></script>
+<script>
+    $(function () {
+        $('.show-nav .logo').click(function () {
+            $('.show-nav').hide();
+            $('.hide-nav').show();
+        });
+        $('.hide-nav .logo').click(function () {
+            $('.hide-nav').hide();
+            $('.show-nav').removeClass('hide').show();
+        });
+    })
+</script>
+</body>
+</html>

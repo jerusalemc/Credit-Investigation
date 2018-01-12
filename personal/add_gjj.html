@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>添加公积金</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/buttons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .bg {
+            width: 425px;
+            height: 684px;
+            background-color: rgb(243, 242, 247);
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-51.4%, -30.4%);
+            color: #dcdcdc;
+        }
+
+        .css-live-wrap-tbfw {
+            position: absolute;
+            top: 50%;
+            left: 37%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-arrow {
+            position: absolute;
+            top: 3%;
+            left: 5%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-ztl {
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            transform: translate(-30%, -50%);
+        }
+
+        .sjk123 {
+             width: 700px;
+            height: 1200px;
+            background-image: url("../images/手机壳1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            /*border-radius: 10px;*/
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+
+    </style>
+</head>
+
+<body style="background:none">
+<div class="sjk123">
+<div class="bg" id="qsy1">
+   <img src="../images/资源 79.png" class="css-live-wrap-ztl" style="height: 50px; width: 425px; top: 4%; transform: translate(-30%, -53%);">
+   <a href="add_tbf.html"><img src="../images/资源 80.png" class="css-live-wrap-ztl" style="height: 20px; width: 20px; left: 5%; top: 4% "></a>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 11%; top: 4%; transform: translate(-30%, -60%); color: black;">|</text>
+   <img src="../images/资源 81.png" class="css-live-wrap-ztl" style="height: 30px; width: 80px; left: 20%; top: 4%; transform: translate(-30%, -40%);
+        } ">
+
+   <text class="css-live-wrap-ztl" style="top: 12%; left:51%; font-size: 14px; transform: translate(-32%, -54%); width: 400px">信息安全保护中，未经授权不对外提供</text>
+   <text class="css-live-wrap-ztl" style="top: 15%; left:37%; font-size: 14px; transform: translate(-32%, -54%); width: 400px">我们不会保存你的账户和密码，仅采集与你信用相关的信息</text>
+
+   <img src="../images/资源 76.png" class="css-live-wrap-ztl" style="top: 40%; left: 42%; transform: translate(-30%, -40%); width: 170px; height: 170px">
+
+
+    <text class="css-live-wrap-ztl" style="top: 70%; left:48%; color: gray; font-size: 16px; transform: translate(-32%, -54%); width: 400px">公积金是反映用户履约能力的重要信息</text>
+    <text class="css-live-wrap-ztl" style="top: 73%; left:55%; color: gray; font-size: 16px; transform: translate(-32%, -54%); width: 400px">有助于通宝为你更客观的评估</text>
+
+    <img src="../images/资源 77.png" class="css-live-wrap-ztl" style="top: 80%; left: 32%; transform: translate(-29%, -40%); width: 350px; height: 60px" onclick="change()">
+
+</div>
+<div id="qsy2" style="visibility: hidden;">
+   <a id="arrow2" onclick="window.location.reload()" style="visibility: hidden;"><img src="../images/资源 80.png" class="css-live-wrap-ztl" style="height: 20px; width: 20px; left: 21%; top: 18%; transform: translate(-0%, -54%);"></a>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 25%; top: 18%; transform: translate(-0%, -60%); color: black;">|</text>
+   <img src="../images/资源 81.png" class="css-live-wrap-ztl" style="height: 30px; width: 80px; left: 31%; top: 18%; transform: translate(-30%, -40%);
+        } ">
+
+   <iframe id="frame" src="" class="css-live-wrap-ztl" style="height: 634px; width:426px; top:45%; left: 36%; transform: translate(-28.5%, -47%); background-color: white;"></iframe>
+
+</div>
+</div>
+
+
+</body>
+</html>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/js.cookie.js"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function change() {
+        document.getElementById("qsy1").style.visibility = "hidden";
+        document.getElementById("qsy2").style.visibility = "visible";
+        document.getElementById("arrow2").style.visibility = "visible";
+        $.post("http://202.120.32.247:54324/api/v1.0/personal/self/credit/geturl", {
+            "mobile": Cookies.get("mobile"),
+            "token": Cookies.get("token"),
+            "srctype": "FUND"
+        }).done(function (result) {
+            var res = result.url;
+            res = res.concat("&backUrl=http://202.120.32.247:54324/html/personal/return.html&successUrl=http://202.120.32.247:54324/html/personal/return.html");
+            $("#frame").attr('src', res);
+        });
+    }
+
+    document.getElementById('frame').onload = function() {
+        try {
+            console.log(document.getElementById('frame').contentWindow.location.href);
+            window.location.href="http://202.120.32.247:54324/html/personal/add_tbf.html";
+        }
+         catch (e) {
+            console.log("cross domain!");
+        }
+    }
+
+</script>

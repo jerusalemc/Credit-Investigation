@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>社保基本信息</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/buttons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/js.cookie.js"></script>
+    <script src="../js/jquery.nicescroll.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .bg {
+            width: 425px;
+            height: 650px;
+            background-color: rgb(243, 242, 247);
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            transform: translate(-51.6%, -29.9%);
+            color: #dcdcdc;
+        }
+        .css-live-wrap-ztl {
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            transform: translate(-30%, -50%);
+        }
+
+        .sjk123 {
+            width: 700px;
+            height: 1200px;
+            background-image: url("../images/手机壳1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+
+    </style>
+</head>
+
+<body style="background:none">
+<div class="sjk123">
+    <div class="bg">
+       <img src="../images/资源 79.png" class="css-live-wrap-ztl"
+             style="height: 50px; width: 425px; top: 4%; transform: translate(-29.5%, -53%);">
+        <a href="sqjl.html"><img src="../images/资源 80.png" class="css-live-wrap-ztl"
+                                 style="height: 20px; width: 20px; left: 5%; top: 4% "></a>
+        <text class="css-live-wrap-ztl" style="font-size: 20px; left: 11%; top: 4%; transform: translate(-30%, -60%);">
+            |
+        </text>
+        <text class="css-live-wrap-ztl"
+              style="font-size: 22px; left: 24%; top: 4%; transform: translate(-30%, -50%); color: #0099FF">社保基本信息
+        </text>
+        <div class="panel-group "  style="padding-top: 12%">
+            <div class="panel panel-default" id="viewportdiv" style="height:634px">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" onclick="hide(0)" style="font-size: 20px">账户基本信息</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <ul class="list-group" id="scroll"  style="height: 545px;font-size: 18px;color:black">
+                        <li class="list-group-item" id="name">姓名:</li>
+                        <li class="list-group-item">性别:</li>
+                        <li class="list-group-item" id="birth">生日:</li>
+                        <li class="list-group-item">学历:</li>
+                        <li class="list-group-item" id="address">通讯地址:</li>
+                        <li class="list-group-item">公积金帐号:</li>
+                        <li class="list-group-item">参保状态:</li>
+                        <li class="list-group-item" id="idcard_type">证件类型:</li>
+                        <li class="list-group-item" id="idcard">证件号码:</li>
+                        <li class="list-group-item">最近社保机构名称:</li>
+                        <li class="list-group-item" id="company">最近参保单位:</li>
+                    </ul>
+                </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" onclick="hide(1)"  style="font-size: 20px">账户详细信息</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <ul class="list-group" id="scroll2" style="height: 545px;font-size: 18px;color:black">
+                        <li class="list-group-item">养老金余额:</li>
+                        <li class="list-group-item" id="pension_balance">医疗账户余额:</li>
+                        <li class="list-group-item" id="period">最近缴纳时间:</li>
+                        <li class="list-group-item">开始参保时间:</li>
+                        <li class="list-group-item">终止参保时间:</li>
+                        <li class="list-group-item" id="payment_months">累计缴纳月数:</li>
+                        <li class="list-group-item" id="continuous_payment_max_months">历史连续缴纳最大月数:</li>
+                        <li class="list-group-item">最近社保机构名称:</li>
+                        <li class="list-group-item" id="company2">最近参保单位:</li>
+                        <li class="list-group-item">最近单位缴纳月数:</li>
+                        <li class="list-group-item" id="yj_month_income">预计月收入:</li>
+                        <li class="list-group-item" id="current_base">最近缴纳基数:</li>
+                        <li class="list-group-item" id="average_base">平均缴纳基数:</li>
+                        <li class="list-group-item" id="max_base">历史最大缴纳基数:</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+    $(function() {
+        function getQueryString(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return decodeURI(r[2]);
+            }
+            return null;
+        }
+        $("#scroll").niceScroll();
+        $("#scroll2").niceScroll();
+        $.post("http://202.120.32.247:54324/api/v1.0/personal/self/report/credit", {
+            "mobile": Cookies.get("mobile"),
+            "token": Cookies.get("token"),
+            "srctype": "SOCIALSECURITY",
+            "task_id": getQueryString("task_id")
+        })
+            .done(function (result) {
+                if (result.report != null) {
+                    res =result.report.report;
+                    res = res[0].data;
+                    console.log(res);
+                    document.getElementById("name").innerHTML="姓名:&emsp;&emsp;&emsp;&emsp;&emsp;"+res.name;
+                    document.getElementById("idcard").innerHTML="证件号码:&emsp;&emsp;&emsp;"+res.idcard;
+                    document.getElementById("birth").innerHTML="生日:&emsp;&emsp;&emsp;&emsp;&emsp;"+res.birth;
+                    document.getElementById("address").innerHTML="通讯地址:&emsp;&emsp;&emsp;"+res.address;
+                    document.getElementById("idcard_type").innerHTML="证件类型:&emsp;&emsp;&emsp;"+res.idcard_type;
+                    document.getElementById("company").innerHTML="最近参保单位:&emsp;"+res.company;
+
+                    document.getElementById("company2").innerHTML="最近参保单位:&emsp;&emsp;&emsp;"+res.company;
+                    document.getElementById("pension_balance").innerHTML="医疗账户余额:&emsp;&emsp;&emsp;"+parseFloat(res.pension_balance*0.01).toFixed(2);
+                    document.getElementById("period").innerHTML="最近缴纳时间:&emsp;&emsp;&emsp;"+res.period;
+                    document.getElementById("payment_months").innerHTML="累计缴纳月数:&emsp;&emsp;&emsp;"+res.payment_months;
+                    document.getElementById("continuous_payment_max_months").innerHTML="历史连续缴纳最大月数:"+res.continuous_payment_max_months;
+                    document.getElementById("yj_month_income").innerHTML="预计月收入:&emsp;&emsp;&emsp;&emsp;"+parseFloat(res.yj_month_income*0.01).toFixed(2);
+                    document.getElementById("current_base").innerHTML="最近缴纳基数:&emsp;&emsp;&emsp;"+parseFloat(res.current_base*0.01).toFixed(2);
+                    document.getElementById("average_base").innerHTML="平均缴纳基数:&emsp;&emsp;&emsp;"+parseFloat(res.average_base*0.01).toFixed(2);
+                    document.getElementById("max_base").innerHTML="历史最大缴纳基数:&emsp;"+parseFloat(res.max_base*0.01).toFixed(2);
+                }
+                else{
+                    alert('未找到报告!');
+                }
+            });
+    });
+    function hide(flag) {
+        if(flag==1){
+            $("#collapse1").hide();
+            $("#collapse2").show();
+        }
+        if(flag==0){
+            $("#collapse1").show();
+            $("#collapse2").hide();
+        }
+    }
+    hide(0);
+</script>

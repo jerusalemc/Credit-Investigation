@@ -1,0 +1,149 @@
+.full-screen .main-content{
+    margin-left: 0;
+}
+.full-screen .left-side{
+    margin-left: -52px;
+}
+.fix-cursor{
+    position: fixed;
+    left: 0;
+    top:50%;
+    margin-top: -40px;
+    cursor:pointer;
+    z-index: 99999;
+}
+.fix-cursor img{
+    height: 52px;
+    width: 52px;
+    cursor:pointer;
+}
+.fix-cursor img:hover{
+    height: 64px;
+    width: 64px;
+}
+.full-width{
+    width: 100%;
+}
+.panel{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.vertical-middle{
+    top: 50%;
+    margin-top: -200px;
+}
+.vertical-middle h3,.vertical-middle h4{
+    margin: 20px auto;
+}
+.form-signin-heading img{
+    width: 140px;
+    height: 140px;
+}
+
+body {
+    background: #0181FE url(../images/background.jpg) repeat scroll top;
+    background-size:100% 100%;
+    background-attachment: fixed;
+}
+.maincontent {
+    padding: 0 0 0 50px;
+    margin-right: 105px;
+    min-height: 1000px;
+}
+.title-logo img{
+    height: 40px;
+    margin: 15px;
+}
+.logo img{
+    width: 60px;
+    margin-top: 15px;
+ }
+.show-nav{
+    background-color: #f0f2f5;
+}
+.hide-nav{
+
+}
+
+
+.white-color{
+    color: #fff;
+}
+.white-color h2{
+    margin-bottom: 1.5vw;
+    font-size: 1.7vw;
+}
+.white-color h4{
+    margin-bottom: 1.2vw;
+    font-size: 1vw;
+}
+.margin-top h4{
+    line-height: 2.4vw;
+}
+.margin-top{
+    margin-top: 2.8vw;
+}
+.small-pic div div{
+    color: #fff;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.small-pic img{
+    margin: auto;
+    display: table-cell;
+}
+
+
+
+
+/*.myscroll::-webkit-scrollbar{*/
+/*width:14px; !*滚动条宽度*!*/
+/*}*/
+/*!*滚动条按钮*!*/
+/*.myscroll::-webkit-scrollbar-button {*/
+/*}*/
+/*.myscroll::-webkit-scrollbar-track{*/
+/*background-color:#F3F3F3; !*滑道全部*!*/
+/*-webkit-border-radius:8px;*/
+/*}*/
+/*.myscroll::-webkit-scrollbar-track-piece{*/
+/*background-color:#F3F3F3; !*滑道*!*/
+/*-webkit-border-radius:8px;*/
+/*}*/
+/*.myscroll::-webkit-scrollbar-thumb{*/
+/*background-color: #56a7ff; !*滑动条表面*!*/
+/*border:solid 1px #C0C0C0; !*滑动条边框*!*/
+/*border-radius:8px; !*滑动条圆角宽度*!*/
+/*}*/
+/*!*横竖滚动条交角*!*/
+/*.myscroll::-webkit-scrollbar-corner {*/
+/*background-color: #F3F3F3;*/
+/*}*/
+/*!*横竖滚动条交角图案*!*/
+/*.myscroll::-webkit-resizer {*/
+/*!*background-image: url(/public/img/resizer-inactive.png);*!*/
+/*background-repeat: no-repeat;*/
+/*background-position: bottom right;*/
+/*}*/
+/*!*鼠标滑过滑动条*!*/
+/*.myscroll::-webkit-scrollbar-thumb:hover{*/
+/*background-color:#F3F3E0;*/
+/*}*/
+
+a:link{text-decoration:none ; color: #56a7ff;}
+a:visited {text-decoration:none ; color: #56a7ff;}
+a:hover {text-decoration:none ; color: #56a7ff;cursor: pointer;}
+a:active {text-decoration:none ; color: #56a7ff;}
+
+
+.arrow{
+    float: right;
+    height: 15px;
+    cursor: pointer;
+}
+.mypanel{
+    background-color: white;
+    border-radius:10px;
+}
+

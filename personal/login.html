@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>通宝分登陆页</title>
+
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .css-live-wrap {
+            position: absolute;
+            top: 8%;
+            left: 14%;
+            width: 400px;
+            height: 500px;
+            transform: translate(0%, 0%);
+        }
+
+        .sjk1 {
+             width: 560px;
+            height: 760px;
+            background-image: url("../images/手机壳不透明1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            /*border-radius: 10px;*/
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+    </style>
+</head>
+
+<body class="sticky-header">
+<section id="sec">
+    <div class="left-side sticky-left-side show-nav hide">
+        <div class="logo">
+            <img src="../images/nav-title.png" alt="">
+        </div>
+
+        <div class="left-side-inner">
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="../index.html"><span>主页</span></a></li>
+                <li class="active"><a href="../personal/login.html"><span>登录/注册</span></a></li>
+                <li><a href="../datasourseShow.html"><span>数据源展示</span></a></li>
+                <li><a href="../definition.html"><span>关于通宝分</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="left-side sticky-left-side hide-nav">
+        <div class="logo">
+            <img src="../images/nav-title2.png" alt="">
+        </div>
+    </div>
+
+    <div class="title-logo">
+        <img src="../images/title.png">
+    </div>
+
+    <div class="sjk1">
+       <div class="css-live-wrap">
+       <form class="form-signin" action="#" id="login_form">
+           <div class="form-signin-heading text-center">
+               <img src="../images/login-logo.png" alt=""/>
+           </div>
+
+           <div class="login-wrap">
+               <div >
+                   <input type="text" id="mobile" name="mobile" class="form-control" placeholder="请输入您的手机号" autofocus style="font-size: 15px">
+                   <input type="password" id="password" name="password" class="form-control" placeholder="请输入密码" style="height: 43px;">
+                   <label class="checkbox" id="rM" style="color: black">
+                       <input type="checkbox" id="remember-me" value="remember-me" name="remember"> 记住我
+                   </label>
+               </div>
+               <a href="login_message.html" style="color:#EC9250" >
+                   其他方式登录
+               </a>
+               <button class="btn btn-lg btn-login btn-block" type="submit" style="font-size: 22px;">
+                   <i class="fa" style="font-size: 22px;" >登录</i>
+               </button>
+               <div class="registration">
+                   <a class="" href="registration.html" style="">
+                       免费注册
+                   </a>
+               </div>
+           </div>
+        </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../project_js/login.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js" type="text/javascript"></script>
+<script src="../js/js.cookie.js"></script>
+<script>
+    $(document).ready(function () {
+        Login.init();
+        var checked = Cookies.get("rmbUser");
+        var mobile = Cookies.get("mobile");
+        var password = Cookies.get("password");
+        if (checked == "true") {
+            $("#mobile").attr("value", mobile);
+            $("#password").attr("value", password);
+            $("#remember-me").attr("checked", checked);
+        }
+    });
+
+    $(function () {
+        $('.show-nav .logo').click(function () {
+            $('.show-nav').hide();
+            $('.hide-nav').show();
+        });
+        $('.hide-nav .logo').click(function () {
+            $('.hide-nav').hide();
+            $('.show-nav').removeClass('hide').show();
+        });
+    })
+
+    document.getElementById('sec').style.height = window.innerHeight + "px";
+</script>

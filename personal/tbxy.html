@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>通宝信用</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/buttons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .css-live-wrap {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .css-live-wrap-bt {
+            position: absolute;
+            top: 40%;
+            left: 80%;
+            color:#1B9AF7;
+            transform: translate(-30%, -50%);
+            z-index: 10000;
+        }
+
+        .css-live-wrap-tbfw {
+            position: absolute;
+            top: 50%;
+            left: 37%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-yysfl {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 65%;
+            left: 10%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-yysflfont {
+            position: absolute;
+            top: 70%;
+            left: 10%;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-yysflbt {
+            z-index: 10000;
+            position: absolute;
+            background:#1B9AF7;
+            color:white;
+            top: 75%;
+            left: 10%;
+            transform: translate(-30%, -50%);
+        }
+        .css-live-wrap-yysnoflbt {
+            z-index: 10000;
+            position: absolute;
+            background:darkgrey;
+            color:black;
+            top: 75%;
+            left: 10%;
+
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-tbfwfont {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 20px;
+            transform: translate(-30%, -50%);
+        }
+
+        .css-live-wrap-ztl {
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            transform: translate(-30%, -50%);
+        }
+
+        .sjk1 {
+            width: 700px;
+            height: 1200px;
+            background-image: url("../images/手机壳1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+
+        .bg {
+            width: 426px;
+            height: 700px;
+            background-image: url("../images/tbxybg_b.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-51.4%, -29.65%);
+        }
+    </style>
+</head>
+
+<body style="background:none">
+
+<div class="sjk1">
+<div class="bg" id="qsy1">
+    <a href="add_tbf.html" class="button button-pill button-tiny css-live-wrap-bt"><b>去加分</b></a>
+    <img src="../images/tbfw.png" class="css-live-wrap-tbfw">
+    <span class="css-live-wrap-tbfwfont"><b>通宝服务</b></span>
+
+
+    <img src="../images/yysfl.png" class="css-live-wrap-yysfl">
+    <span class="css-live-wrap-yysflfont"><b>运营商福利</b></span>
+    <a id="yysfl"  class="button button-pill button-tiny css-live-wrap-yysnoflbt" onclick="direct(0);"><b></b></a>
+
+
+    <img src="../images/lcfw.png" class="css-live-wrap-yysfl" style="left: 35%">
+    <span class="css-live-wrap-yysflfont" style="left: 37%"><b>理财服务</b></span>
+    <a id="lcfw"  class="button button-pill button-tiny css-live-wrap-yysnoflbt" style="left: 35%" onclick="direct(1);"><b></b></a>
+
+    <img src="../images/bxyk.png" class="css-live-wrap-yysfl" style="height:30px;width:45px;left: 60%">
+    <span class="css-live-wrap-yysflfont" style="left: 59%"><b>办信用卡</b></span>
+    <a id="bxyk"  class="button button-pill button-tiny css-live-wrap-yysnoflbt" style="left: 59%" onclick="direct(2);"><b></b></a>
+
+    <img src="../images/xjdfw.png" class="css-live-wrap-yysfl" style="left: 82%">
+    <span class="css-live-wrap-yysflfont" style="left: 83%"><b>信贷服务</b></span>
+    <a id="xjdfw"  class="button button-pill button-tiny css-live-wrap-yysnoflbt" style="left: 82%" onclick="direct(3);"><b></b></a>
+
+    <!-- left side start-->
+    <div class="left-side sticky-left-side show-nav hide " style="width: 100px ;height:37%; position: absolute;">
+        <div class="logo">
+            <img src="../images/nav-title.png" alt="">
+        </div>
+
+        <div>
+            <ul class="nav nav-pills nav-stacked custom-nav" style="margin-top: 10px">
+                <li ><a href="fwxy.html"><span style="font-size: 14px">服务协议</span></a></li>
+                <li><a href="xyjl.html" style="font-size: 14px"><span>信用记录</span></a></li>
+                <li><a href="sqjl.html" style="font-size: 14px"><span>授权记录</span></a></li>
+                <li><a href="login.html" style="font-size: 14px"><span>安全退出</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="left-side sticky-left-side hide-nav " style="position: absolute">
+
+
+        <div class="logo">
+            <img src="../images/nav-title2.png" alt="">
+        </div>
+    </div>
+
+    <div class="css-live-wrap">
+    <canvas id="myCanvas" width="200" height="200" style="margin:20px;"></canvas> 
+    </div>
+
+    <text id="percentage" class="css-live-wrap" style="fill: #fff; font-size: 52px;  color: white;">
+    </text>
+    <text id="evaluation" class="css-live-wrap" style="fill: #fff; font-size: 25px; top:14% ; color: white;">
+    </text>
+    <text id="time" class="css-live-wrap" style="fill: #fff; font-size: 15px; top: 25%; color: white;">
+    </text>
+</div>
+
+<div id="qsy2" style="visibility: hidden;">
+   <a id="arrow2" onclick="window.location.reload()" style="visibility: hidden;"><img src="../images/资源 80.png" class="css-live-wrap-ztl" style="height: 20px; width: 20px; left: 21%; top: 18%; transform: translate(-30%, -60%);"></a>
+   <text class="css-live-wrap-ztl" style="font-size: 20px; left: 25%; top: 18%; transform: translate(-30%, -70%);">|</text>
+   <text id="txt" class="css-live-wrap-ztl" style="font-size: 20px; left: 31%; top: 18%; transform: translate(-30%, -60%); color: rgb(1, 128, 256);";">可享受界面</text>
+
+   <iframe id="frame" src="" class="css-live-wrap-ztl" style="height: 640px; width:426px; top:45%; left: 36%; transform: translate(-28.5%, -47.5%); background-color: white;"></iframe>
+</div>
+</div>
+
+</body>
+</html>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/js.cookie.js"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.show-nav .logo').click(function () {
+            $('.show-nav').hide();
+            $('.hide-nav').show();
+        });
+        $('.hide-nav .logo').click(function () {
+            $('.hide-nav').hide();
+            $('.show-nav').removeClass('hide').show();
+        });
+    })
+    var percentage = 900;
+    var time = "2017-12-01"
+    var eva = "信用一般"
+    $.post("http://202.120.32.247:54324/api/v1.0/personal/self/history/scores", {
+        "mobile": Cookies.get("mobile"),
+        "token": Cookies.get("token")
+    })
+    .done(function (result) {
+        var res = result.data;
+        var length = res.length;
+        percentage = res[length - 1].total;
+        time = res[length - 1].time.substr(0, 10);
+        if(percentage<440){
+            eva = "信用一般";
+            disOrEnable("yysfl",true);
+            disOrEnable("lcfw",true);
+            disOrEnable("bxyk",true);
+            disOrEnable("xjdfw",true);
+        }else if(percentage<460){
+            eva = "信用不错";
+            disOrEnable("yysfl",true);
+            disOrEnable("lcfw",true);
+            disOrEnable("bxyk",true);
+            disOrEnable("xjdfw",true);
+         }else if(percentage<480){//运营商和理财服务
+            eva = "信用良好";
+            disOrEnable("yysfl",false);
+            disOrEnable("lcfw",false);
+            disOrEnable("bxyk",true);
+            disOrEnable("xjdfw",true);
+        }else{//现金带和信用卡
+            eva = "信用优秀";
+            disOrEnable("yysfl",false);
+            disOrEnable("lcfw",false);
+            disOrEnable("bxyk",false);
+            disOrEnable("xjdfw",false);
+        }
+        setCircle();
+    });
+
+    function disOrEnable(name,flag){
+        if(flag){//禁用
+            $("#"+name).removeAttr('href');//去掉a标签中的href属性
+            $("#"+name).removeAttr('onclick');//去掉a标签中的onclick事件
+            $("#"+name).removeAttr('class');
+            $("#"+name).attr("class","button button-pill button-tiny css-live-wrap-yysnoflbt");
+            $("#"+name).text("加分享受");
+            $("#"+name).css("font-weight","bold");
+        }else{
+            $("#"+name).removeAttr('class');
+            $("#"+name).attr("class","button button-pill button-tiny css-live-wrap-yysflbt");
+            $("#"+name).text("可享受");
+            $("#"+name).css("font-weight","bold");
+        }
+
+    }
+
+    function direct(order) {
+        document.getElementById("qsy1").style.visibility = "hidden";
+        document.getElementById("qsy2").style.visibility = "visible";
+        document.getElementById("arrow2").style.visibility = "visible";
+
+        var ta;
+        switch (order){
+            case 0:
+                ta="https://m.10010.com/gz/";
+                document.getElementById("txt").textContent = "运营商福利";
+                document.getElementById("txt").style.left = "32%";
+                break;
+            case 1:
+                ta="https://8.wacai.com/finance/h5/index.action?platform=42";
+                document.getElementById("txt").textContent = "理财服务";
+                break;
+            case 2:
+                ta="https://site.wacai.com/page/4446?channel=zhongxin&popup=1&wrap=1";
+                document.getElementById("txt").textContent = "办信用卡";
+                break;
+            case 3:
+                ta="https://ka.niwodai.com/loans-mobile/event.do?method=tg&a=5820160000017695&nwd_ext_aid=5020160621702707&source_id=008";
+                document.getElementById("txt").textContent = "信贷服务";
+                // document.getElementById("txt").style.left = "32%";
+                break;
+        }
+        $("#frame").attr('src', ta);
+
+    }
+
+    function setCircle() {
+        var category = Math.floor(percentage / 50);
+        document.getElementById('percentage').innerHTML = percentage;
+        document.getElementById('time').innerHTML = "评估时间" + time;
+        document.getElementById('evaluation').innerHTML = eva;
+        circle();
+        switch (category) {
+            case 0:
+                circle(90, 197, 92, 197, 145, 197, 41, 197, 100, 197, 0.5, 0.5);
+                break;
+            case 1:
+            case 2:
+                circle(90, 150, 92, 200, 145, 175, 41, 175,  43, 175, 0.3, 0.7);
+                break;
+            case 3:
+            case 4:
+                circle(90, 131, 92, 191, 145, 161, 41, 161, 28, 161, 0.23, 0.77);
+                break;
+            case 5:
+            case 6:
+                circle(90, 90, 92, 190, 145, 140, 41, 140, 14, 140, 0.15, 0.85);
+                break;
+            case 7:
+            case 8:
+                circle(90, 60, 92, 180, 145, 120, 41, 120, 7, 120, 0.07, 0.93);
+                break;
+            case 9:
+            case 10:
+                circle(90, 28, 92, 179, 145, 100, 41, 100, 0, 100, 0, 1);
+                break;
+            case 11:
+            case 12:
+                circle(90, 20, 92, 140, 145, 80, 41, 80, 7, 80, -0.07, -0.93);
+                break;
+            case 13:
+            case 14:
+                circle(90, 10, 92, 110, 145, 60, 41, 60, 14, 60, -0.15, -0.85);
+                break;
+            case 15:
+            case 16:
+                circle(90, 9, 92, 69, 145, 39, 41, 39, 28, 39, -0.23, -0.77);
+                break;
+            case 17:
+            case 18:
+            case 19:
+                circle(90, 0, 92, 50, 145, 25, 41, 25, 43, 25, -0.3, -0.7);
+                break;
+            default:
+                circle(90, 3, 92, 3, 145, 3, 41, 3, 100, 3, -0.49, -0.5);
+        }
+    }
+
+    function circle(x1_1, y1_1, x2_1, y2_1, x1_2, y1_2, x2_2, y2_2, startx, starty, start_angle, end_angle) {
+        let canvas = $("#myCanvas");
+        let ctx = canvas[0].getContext('2d');
+        let radians = (Math.PI / 180) * 180;
+        let startTime = Date.now();
+        let time = 2000;
+        let clockwise = 1;
+        let cp1x, cp1y, cp2x, cp2y;
+         
+        // 0% :   90 197, 92 197  145 197, 41 197    100 197  100 197  0.5 * Math.PI  0.5 * Math.PI
+        // 10%:   90 150, 92 200  145 175, 41 175   43 175  157 175   0.3  0.7
+        // 20%:   90 131  92 191  145 161  41 161   28 161  172 161   0.23 0.77
+        // 30%:   90 90  92 190  145 140  41 140   14 140  186 140   0.15 0.85
+        // 40%:   90 60  92 180  145 120  41 120   7 120   193 120   0.07 0.93
+        // 50%：  90 28  92 179   145 100 41 100    0 100   200 100   0*Math.PI  1 * Math.PI
+        // 60%:   90 20  92 140   145 80  41 80    7 80    193 80    -0.07  -0.93
+        // 70%:   90 10  92 110   145 60  41 60    14 60   186 60    -0.15 -0.85
+        // 80%:   90 9  92 69    145 39  41 39     28 39  172 39   -0.23 -0.77
+        // 90%:   90 0  92 50    145 25  41 25     43 25  157 25   -0.3 -0.7 
+        // 100%:  90 3  92 3     145  3  41 3      100 3  100 3    -0.49 -0.5
+
+        requestAnimationFrame(function waveDraw() { 
+            let t = Math.min(1.0, (Date.now() - startTime) / time);
+               
+            if(clockwise) {
+                cp1x = x1_1 + ((x1_2 - x1_1) * t);
+                cp1y = y1_1 + ((y1_2 - y1_1) * t);
+                cp2x = x2_1 - ((x2_1 - x2_2) * t);
+                cp2y = y2_1 - ((y2_1 - y2_2) * t);
+            } else {
+                cp1x = x1_2 - ((x1_2 - x1_1) * t);
+                cp1y = y1_2 - ((y1_2 - y1_1) * t);
+                cp2x = x2_2 + ((x2_1 - x2_2) * t);
+                cp2y = y2_2 + ((y2_1 - y2_2) * t);
+            }
+             
+            ctx.clearRect(0, 0, 200, 200);
+            ctx.beginPath();
+            ctx.moveTo(startx, starty);
+            // 绘制三次贝塞尔曲线
+            ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, 200 - startx, starty);
+            // 绘制圆弧
+            ctx.arc(100, 100, 97, start_angle * Math.PI, end_angle * Math.PI, 0);
+            ctx.fillStyle = "rgba(102, 195, 255, .8)";
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(100,100,95,0,2 * Math.PI,false);
+            ctx.lineWidth=10;
+            ctx.strokeStyle="rgba(102, 195, 255, 1)";
+            ctx.stroke();//画空心圆
+            ctx.closePath();
+
+            ctx.save(); 
+         
+            if( t == 1 ) {
+                startTime = Date.now();
+                clockwise = !clockwise;
+            }
+ 
+            requestAnimationFrame(waveDraw);
+        });
+    }
+</script>
+
+
+

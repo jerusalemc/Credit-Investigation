@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>通宝分手机注册页</title>
+
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .css-live-wrap {
+            position: absolute;
+            top: 8%;
+            left: 14%;
+            width: 400px;
+            height: 500px;
+            transform: translate(0%, 0%);
+        }
+
+        .sjk1 {
+             width: 560px;
+            height: 760px;
+            background-image: url("../images/手机壳不透明1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+
+        .no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+    </style>
+</head>
+
+<body class="sticky-header">
+<section id="sec">
+    <!-- left side start-->
+    <div class="left-side sticky-left-side show-nav hide">
+        <div class="logo">
+            <img src="../images/nav-title.png" alt="">
+        </div>
+
+        <div class="left-side-inner">
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="../index.html"><span>主页</span></a></li>
+                <li class="active"><a href="../personal/login.html"><span>登录/注册</span></a></li>
+                <li><a href="../datasourseShow.html"><span>数据源展示</span></a></li>
+                <li><a href="../definition.html"><span>关于通宝分</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="left-side sticky-left-side hide-nav">
+
+
+        <div class="logo">
+            <img src="../images/nav-title2.png" alt="">
+        </div>
+    </div>
+
+    <!-- left side end-->
+    <div class="title-logo">
+        <img src="../images/title.png">
+    </div>
+
+    <div class="sjk1"><div class="css-live-wrap">
+        <form class="form-signin" id="registration-form" >
+            <div class="form-signin-heading text-center">
+                <img src="../images/login-logo.png" alt=""/ >
+            </div>
+    
+                <div class="login-wrap">
+                    <input type="text" autofocus="" id="mobile" name="mobile" placeholder="请输入您的手机号"  class="form-control" style="font-size: 14px; ">
+                    <div class="form-group mx-sm-3">
+                        <input type="text" autofocus="" name="authcode" placeholder="请输入验证码" style="width:185px;height: 40px;font-size: 14px;display: inline-block; " class="form-control">
+
+                        <!-- <button class="btn  get-code" onclick="getCode(this)" style="background:#FFA20E;color:#ffffff;height: 40px; display: inline-block; margin-top: -5px;" id="J_getCode">获取验证码</button> -->
+                        <button type="button" class="btn  get-code" style="background:#FFA20E;color:#ffffff;height: 40px; display: inline-block; margin-top: -5px;" onclick="getCode(this)" id="J_getCode">获取验证码</button>
+                        <button class="btn reset-code" id="J_resetCode" style="display:none;"><span id="J_second">60</span>秒后重发</button>
+                
+                    <input type="password" id="password" name="password" placeholder="密码为8-20位数字和字母组合"  class="form-control" width="70%" style="height: 40px;font-size: 14px">
+                    <input type="password" id="rePassword" placeholder="请再次确认密码" class="form-control" style="height: 40px;font-size: 14px">
+                        </div>
+                    <!-- <p id="error-message"></p> -->
+                    <button type="submit" id="reg-sub" class="btn btn-lg btn-login btn-block" style="font-size: 22px;">
+                        <i class="fa " style="font-size: 22px;">注册</i>
+                    </button>
+    
+                    <div class="registration">
+                        点击'注册' 即表示您同意<a href="fwxy.html" class="">《服务协议》</a>
+                    </div>
+                </div>
+        </form>
+    </div></div>
+    <div id="message"></div>
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../project_js/registration.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js" type="text/javascript"></script>
+<script>
+    var isPhone = 1;
+    //验证手机号码
+    function checkPhone(){
+        var mobile = $('#mobile').val();
+        var pattern = /^1[0-9]{10}$/;
+        isPhone = 1;
+        if(mobile == '') {
+            bootbox.alert('请输入手机号码');
+            isPhone = 0;
+            return;
+        }
+        if(!pattern.test(mobile)){
+            bootbox.alert('请输入正确的手机号码');
+            isPhone = 0;
+            return;
+        }
+    }
+    function getCode(e){
+        checkPhone(); //验证手机号码
+        if(isPhone){
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                data: {"mobile":$("#mobile").val(),notest:1},//notest为1正式发短信
+                crossDomain: true,
+                url: "http://202.120.39.3:8800/api/v1.0/user/smsauth",
+                success: function (data) {
+                    if (data["code"]="200") {
+                        //跳转到用户个人信息界面
+                        console.log(data["mobile"]+data["authcode"]);
+                    } else{
+                        console.log(data);
+                    }
+                }
+            });
+            resetCode(); //倒计时
+        }else{
+            $('#mobile').focus();
+        }
+    }
+    //倒计时
+    function resetCode(){
+        $('#J_getCode').hide();
+        $('#J_second').html('60');
+        $('#J_resetCode').show();
+        var second = 60;
+        var timer = null;
+        timer = setInterval(function(){
+            second -= 1;
+            if(second >0 ){
+                $('#J_second').html(second);
+            }else{
+                clearInterval(timer);
+                $('#J_getCode').show();
+                $('#J_resetCode').hide();
+            }
+        },1000);
+    }
+    $(document).ready(function () {
+        Registration.init();
+    });
+
+    document.getElementById('sec').style.height = window.innerHeight + "px";
+</script>
+
+<script>
+    // bootbox.alert("This is the default alert!");
+    $(function () {
+        $('.show-nav .logo').click(function () {
+            $('.show-nav').hide();
+            $('.hide-nav').show();
+        });
+        $('.hide-nav .logo').click(function () {
+            $('.hide-nav').hide();
+            $('.show-nav').removeClass('hide').show();
+        });
+    })
+</script>
+</body>
+</html>
