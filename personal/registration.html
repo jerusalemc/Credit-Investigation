@@ -102,8 +102,10 @@
                     </button>
     
                     <div class="registration">
-                        点击'注册' 即表示您同意<a href="fwxy.html" class="">《服务协议》</a>
+                        <label><input type="radio" value=""  style="vertical-align: middle; margin-top: -2.2px"/> 同意</label> <a href="fwxy.html" class="">《服务协议》</a>
+                        <a href="login.html" style=" padding-left: 97px;">用户登录</a>
                     </div>
+                   
                 </div>
         </form>
     </div></div>
@@ -143,7 +145,7 @@
                 dataType: "json",
                 data: {"mobile":$("#mobile").val(),notest:1},//notest为1正式发短信
                 crossDomain: true,
-                url: "http://202.120.39.3:8800/api/v1.0/user/smsauth",
+                url: "http://202.120.32.247:54324/api/v1.0/user/smsauth",
                 success: function (data) {
                     if (data["code"]="200") {
                         //跳转到用户个人信息界面

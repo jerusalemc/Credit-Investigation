@@ -252,9 +252,7 @@ $(function () {
                 }
         ]
 };
-    $("#scroll").niceScroll({cursorcolor:"#c5e3ff",cursorborderradius:'10px',cursorwidth:'6px'});
-    $('#show1,#show2').niceScroll({cursorcolor:"#c5e3ff",cursorborderradius:'10px',cursorwidth:'10px'});
-    //$(".myscroll").niceScroll({styler:"fb",cursorcolor:"#c5e3ff",cursorwidth:'6',cursorborderradius:'10px',background:'#f3f3f3',spacebarenabled:false,cursorborder:'0',zindex:'1000'});
+    $("#scroll").niceScroll({cursorcolor:"#28b6fe",cursorborderradius:'10px',cursorwidth:'6px'});
     var myChart = echarts.init(document.getElementById('map-chart'));
 
     myChart.setOption(option, true);
@@ -450,9 +448,6 @@ $('h4.panel-title').click(function () {
         }
 
     },10);
-    $('.myscroll').niceScroll({autohidemode:'leave',cursorcolor:"#c5e3ff",cursorborderradius:'10px',cursorwidth:'10px'});
-    $('#show1,#show2').niceScroll({cursorcolor:"#c5e3ff",cursorborderradius:'10px',cursorwidth:'10px'});
-
 });
 
 $('h4.panel-title').dblclick(function(){

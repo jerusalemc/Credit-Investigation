@@ -96,40 +96,58 @@ body {
 
 
 
+.myscroll::-webkit-scrollbar{
+width:14px; /*滚动条宽度*/
+}
+/*滚动条按钮*/
+.myscroll::-webkit-scrollbar-button {
+}
+.myscroll::-webkit-scrollbar-track{
+background-color:#F3F3F3; /*滑道全部*/
+-webkit-border-radius:8px;
+}
+.myscroll::-webkit-scrollbar-track-piece{
+background-color:#F3F3F3; /*滑道*/
+-webkit-border-radius:8px;
+}
+.myscroll::-webkit-scrollbar-thumb{
+background-color: #28b6fe; /*滑动条表面*/
+border:solid 1px #C0C0C0; /*滑动条边框*/
+border-radius:8px; /*滑动条圆角宽度*/
+}
+/*横竖滚动条交角*/
+.myscroll::-webkit-scrollbar-corner {
+background-color: #F3F3F3;
+}
+/*横竖滚动条交角图案*/
+.myscroll::-webkit-resizer {
+/*background-image: url(/public/img/resizer-inactive.png);*/
+background-repeat: no-repeat;
+background-position: bottom right;
+}
+/*鼠标滑过滑动条*/
+.myscroll::-webkit-scrollbar-thumb:hover{
+background-color:#F3F3E0;
+}
 
-/*.myscroll::-webkit-scrollbar{*/
-/*width:14px; !*滚动条宽度*!*/
-/*}*/
-/*!*滚动条按钮*!*/
-/*.myscroll::-webkit-scrollbar-button {*/
-/*}*/
-/*.myscroll::-webkit-scrollbar-track{*/
-/*background-color:#F3F3F3; !*滑道全部*!*/
-/*-webkit-border-radius:8px;*/
-/*}*/
-/*.myscroll::-webkit-scrollbar-track-piece{*/
-/*background-color:#F3F3F3; !*滑道*!*/
-/*-webkit-border-radius:8px;*/
-/*}*/
-/*.myscroll::-webkit-scrollbar-thumb{*/
-/*background-color: #56a7ff; !*滑动条表面*!*/
-/*border:solid 1px #C0C0C0; !*滑动条边框*!*/
-/*border-radius:8px; !*滑动条圆角宽度*!*/
-/*}*/
-/*!*横竖滚动条交角*!*/
-/*.myscroll::-webkit-scrollbar-corner {*/
-/*background-color: #F3F3F3;*/
-/*}*/
-/*!*横竖滚动条交角图案*!*/
-/*.myscroll::-webkit-resizer {*/
-/*!*background-image: url(/public/img/resizer-inactive.png);*!*/
-/*background-repeat: no-repeat;*/
-/*background-position: bottom right;*/
-/*}*/
-/*!*鼠标滑过滑动条*!*/
-/*.myscroll::-webkit-scrollbar-thumb:hover{*/
-/*background-color:#F3F3E0;*/
-/*}*/
+
+
+.myscroll{
+        scrollbar-arrow-color: #28b6fe; /**//*三角箭头的颜色*/
+        scrollbar-face-color: #28b6fe; /**//*立体滚动条的颜色*/
+        scrollbar-3dlight-color: #28b6fe; /**//*立体滚动条亮边的颜色*/
+        scrollbar-highlight-color: #28b6fe; /**//*滚动条空白部分的颜色*/
+        scrollbar-shadow-color: #28b6fe; /**//*立体滚动条阴影的颜色*/
+        scrollbar-darkshadow-color: #28b6fe; /**//*立体滚动条强阴影的颜色*/
+        scrollbar-track-color: #F3F3F3; /**//*立体滚动条背景颜色*/
+        scrollbar-base-color: #28b6fe; /**//*滚动条的基本颜色*/
+    }
+
+
+
+
+
+
 
 a:link{text-decoration:none ; color: #56a7ff;}
 a:visited {text-decoration:none ; color: #56a7ff;}
